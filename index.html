@@ -1,47 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Synapq – Coming Soon</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: linear-gradient(45deg, #4facfe, #00f2fe);
-      color: #fff;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .contact {
-      margin-top: 2em;
-    }
-    a {
-      color: #ffe259;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <div>
-    <h1>Synapq</h1>
-    <p>Something exciting is in the works! Our website is under construction. Stay tuned for the launch of Synapq, where technology meets innovation.</p>
-    <div class="contact">
-      <p>For inquiries, reach us at: <a href="mailto:info@synapq.com">info@synapq.com</a></p>
-    </div>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Synapq — Coming Soon</title>
+    <style>
+      /*
+       * Base typography and layout
+       */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.5;
+        color: #131313;
+        background-color: #f7f7f7;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin: 0 0 1rem;
+      }
+
+      /*
+       * Utility classes for spacing and layout
+       */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      /*
+       * Hero section styling
+       */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        color: #ffffff;
+        text-align: center;
+        background: linear-gradient(135deg, #74b9ff, #a3d5ff, #e3f2fd);
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        max-width: 650px;
+        margin: 0 auto 2rem;
+      }
+
+      .hero .cta {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: #0d47a1;
+        color: #ffffff;
+        border-radius: 0.375rem;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+      }
+
+      .hero .cta:hover {
+        background-color: #1565c0;
+      }
+
+      /*
+       * Features grid styling
+       */
+      .features {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .feature {
+        background-color: #ffffff;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        transition: transform 0.2s ease;
+      }
+
+      .feature:hover {
+        transform: translateY(-4px);
+      }
+
+      .feature h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: #0d47a1;
+      }
+
+      .feature p {
+        font-size: 0.95rem;
+        color: #555555;
+      }
+
+      /*
+       * Form section styling
+       */
+      .subscription-form {
+        background-color: #ffffff;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .subscription-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .subscription-form input {
+        width: 100%;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #cccccc;
+        border-radius: 0.375rem;
+        font-size: 1rem;
+      }
+
+      .subscription-form button {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #0d47a1;
+        color: #ffffff;
+        border: none;
+        border-radius: 0.375rem;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      .subscription-form button:hover {
+        background-color: #1565c0;
+      }
+
+      /*
+       * Footer styling
+       */
+      footer {
+        padding: 2rem 0;
+        background-color: #0d47a1;
+        color: #ffffff;
+        text-align: center;
+      }
+
+      footer h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+      }
+
+      footer p {
+        margin: 0.25rem 0;
+      }
+
+      /*
+       * Responsive tweaks
+       */
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 2.75rem;
+        }
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="container">
+        <h1>Synapq</h1>
+        <p>
+          Intelligent pulse logging, redefined. Delivering robust, low‑power devices
+          that harness advanced AI to provide predictive insights and seamless
+          integration with your existing systems.
+        </p>
+        <a href="#subscribe" class="cta">Join the waitlist</a>
+      </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+      <div class="container text-center">
+        <h2>Features</h2>
+        <p>Explore what makes Synapq the next generation of pulse logging technology.</p>
+      </div>
+      <div class="container features">
+        <div class="feature">
+          <h3>Advanced AI‑driven Analytics</h3>
+          <p>
+            Real‑time intelligent analytics deliver predictive insights and early
+            anomaly detection to keep your operations running smoothly.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Stealth Design & Robust Construction</h3>
+          <p>
+            A discreet, weather‑resistant enclosure ensures invisibility and
+            maximum durability in the field.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Ultra‑Low Power Consumption</h3>
+          <p>
+            Extended battery life reduces maintenance cycles and lowers
+            operational overhead.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Seamless Integration</h3>
+          <p>
+            Easily deploy with existing SCADA systems and utility management
+            platforms for a unified workflow.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>High‑Resolution Pulse Logging</h3>
+          <p>
+            Precise and reliable data collection suitable for critical metering
+            and billing accuracy.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>Wireless Connectivity</h3>
+          <p>
+            Flexible NB‑IOT and LoRaWAN connectivity options ensure reliable data
+            transmission even in remote environments.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>End‑to‑End Security</h3>
+          <p>
+            Advanced encryption and secure access controls protect critical
+            infrastructure data from end to end.
+          </p>
+        </div>
+        <div class="feature">
+          <h3>User‑friendly Setup & Management</h3>
+          <p>
+            Mobile app integration for effortless installation, diagnostics and
+            ongoing management.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscription Form Section -->
+    <section class="section" id="subscribe">
+      <div class="container text-center">
+        <h2>Stay Informed</h2>
+        <p>
+          Join our waitlist and be among the first to experience Synapq. We'll
+          keep you updated on launch details and product news.
+        </p>
+      </div>
+      <div class="container">
+        <form class="subscription-form" name="subscription" method="POST">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full-name" placeholder="Your Name" required />
+
+          <label for="organization">Organization</label>
+          <input type="text" id="organization" name="organization" placeholder="Your Company" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+
+          <label for="phone">Contact Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your Phone" />
+
+          <button type="submit">Join the Waitlist</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <h2>Synapq</h2>
+        <p>Intelligent pulse logging, redefined.</p>
+        <p>&copy; 2025 Synapq. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>
